@@ -32,7 +32,7 @@ const schema = new mongoose.Schema({
 const Data = mongoose.model("data", schema);
 
 app.get("/", async (req, res) => {
-  const found = await Data.find().sort([['timeAndDate', 1]]);
+  const found = await Data.find().sort([['timeAndDate', -1]]);
   res.send(found);
 });
 
